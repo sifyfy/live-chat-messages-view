@@ -1,0 +1,74 @@
+body {
+    font-family: "Noto Sans JP";
+    color: #555;
+}
+
+#comments {
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+    width: calc(100% - 20px);
+}
+
+@keyframes live-chat-message-slidein {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+#comments>.comment-frame {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(55, 55, 55, .3);
+    margin: 7px 0;
+    overflow: hidden;
+    position: relative;
+    animation-duration: .5s;
+    animation-name: live-chat-message-slidein;
+}
+
+#comments>.comment-frame>.user-name {
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#comments>.comment-frame>.user-name>span {
+    background-color: #fa9898;
+    max-width: calc(100% - 2em);
+    border-radius: 0px 0px 10px 0px;
+    padding: 1px 7px 2px 7px;
+    color: #fff;
+    font-weight: bold;
+    overflow: hidden;
+    text-shadow: 1px 1px 2px rgb(55 55 55 / 25%);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#comments>.comment-frame>.user-name>span.twitch {
+    background-color: #9147ff;
+}
+
+#comments>.comment-frame>.user-name>span.youtube {
+    background-color: #fa9898;
+}
+
+#comments>.comment-frame>.comment {
+    padding: 0 5px 3px;
+}
+
+#comments>.comment-frame>.comment img {
+    width: auto;
+    height: 1.2em;
+}
