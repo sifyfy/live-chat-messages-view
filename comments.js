@@ -12,7 +12,7 @@
     }
 
     function initLiveChatMessageWebSocketServer() {
-        App.ws = new WebSocket("ws://localhost:51021");
+        App.ws = new WebSocket("ws://localhost:61021");
 
         App.ws.addEventListener("open", () => console.log('Connected to WS server!'));
 

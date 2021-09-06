@@ -1,13 +1,21 @@
 body {
-    font-family: "Noto Sans JP";
+    font-family: "FOT-ハミング Std D";
+    font-size: 1.3rem;
     color: #555;
 }
 
 #comments {
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
     left: 10px;
+    width: calc(100% - 20px); */
+    position: fixed;
+    top: 0;
+    left: 10px;
     width: calc(100% - 20px);
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
 }
 
 @keyframes live-chat-message-slidein {
@@ -20,7 +28,7 @@ body {
 }
 
 #comments>.comment-frame {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, .95);
     border-radius: 10px;
     box-shadow: 1px 1px 3px rgba(55, 55, 55, .3);
     margin: 7px 0;
@@ -54,6 +62,7 @@ body {
     text-shadow: 1px 1px 2px rgb(55 55 55 / 25%);
     white-space: nowrap;
     text-overflow: ellipsis;
+    line-height: 1.5;
 }
 
 #comments>.comment-frame>.user-name>span.twitch {
@@ -66,9 +75,14 @@ body {
 
 #comments>.comment-frame>.comment {
     padding: 0 5px 3px;
+    line-height: 1.5;
+    /* font-size: 110%;
+    color: #fff; */
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, .98), -2px -2px 0 rgba(255, 255, 255, .98), -2px 2px 0 rgba(255, 255, 255, .98), 2px -2px 0 rgba(255, 255, 255, .98), 0px -2px 0 rgba(255, 255, 255, .98), 0px 2px 0 rgba(255, 255, 255, .98), -2px 0px 0 rgba(255, 255, 255, .98), 2px 0 0 rgba(255, 255, 255, .98);
 }
 
 #comments>.comment-frame>.comment img {
     width: auto;
-    height: 1.2em;
+    height: 1.5em;
+    vertical-align: middle;
 }
