@@ -39,20 +39,7 @@
 
             const template = document.querySelector("#comment-template");
             const newCommentFrame = template.content.cloneNode(true);
-            const userName = newCommentFrame.querySelector(".user-name > span");
-            userName.textContent = comment.user_data.name;
             const newComment = newCommentFrame.querySelector(".comment");
-
-            // 名前欄の背景処理
-            switch (comment.stream_data.service_type) {
-                case 'YoutubeLive':
-                    userName.classList.add("youtube");
-                    break;
-                case 'Twitch':
-                    userName.classList.add("twitch");
-                    break;
-                default:
-            }
 
             // チャットメッセージ処理
             let lastIndex = 0;

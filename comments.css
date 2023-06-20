@@ -1,7 +1,7 @@
 body {
     font-family: "FOT-ハミング Std D";
-    font-size: 1.3rem;
-    color: #555;
+    font-size: 2rem;
+    color: #ffdddd;
 }
 
 #comments {
@@ -11,74 +11,48 @@ body {
     width: calc(100% - 20px); */
     position: fixed;
     top: 0;
-    left: 10px;
-    width: calc(100% - 20px);
+    right: 0;
+    min-width: 100%;
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: end;
 }
 
 @keyframes live-chat-message-slidein {
     0% {
         left: 100%;
     }
-    100% {
+
+    1% {
         left: 0;
+    }
+
+    98% {
+        right: 0;
+    }
+
+    100% {
+        right: 100vw;
     }
 }
 
 #comments>.comment-frame {
-    background-color: rgba(255, 255, 255, .95);
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px rgba(55, 55, 55, .3);
-    margin: 7px 0;
+    margin: 0 calc(1em * 0.6);
     overflow: hidden;
     position: relative;
-    animation-duration: .5s;
+    animation-duration: 60s;
     animation-name: live-chat-message-slidein;
-}
-
-#comments>.comment-frame>.user-name {
-    max-width: 100%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-#comments>.comment-frame>.user-name>span {
-    background-color: #fa9898;
-    max-width: calc(100% - 2em);
-    border-radius: 0px 0px 10px 0px;
-    padding: 1px 7px 2px 7px;
-    color: #fff;
-    font-weight: bold;
-    overflow: hidden;
-    text-shadow: 1px 1px 2px rgb(55 55 55 / 25%);
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    line-height: 1.5;
-}
-
-#comments>.comment-frame>.user-name>span.twitch {
-    background-color: #9147ff;
-}
-
-#comments>.comment-frame>.user-name>span.youtube {
-    background-color: #fa9898;
+    animation-fill-mode: forwards;
+    max-width: 750px;
 }
 
 #comments>.comment-frame>.comment {
     padding: 0 5px 3px;
     line-height: 1.5;
-    /* font-size: 110%;
-    color: #fff; */
-    text-shadow: 2px 2px 0 rgba(255, 255, 255, .98), -2px -2px 0 rgba(255, 255, 255, .98), -2px 2px 0 rgba(255, 255, 255, .98), 2px -2px 0 rgba(255, 255, 255, .98), 0px -2px 0 rgba(255, 255, 255, .98), 0px 2px 0 rgba(255, 255, 255, .98), -2px 0px 0 rgba(255, 255, 255, .98), 2px 0 0 rgba(255, 255, 255, .98);
+    text-shadow: 2px 2px 10px rgba(55, 55, 55, .65), -2px -2px 10px rgba(55, 55, 55, .65), -2px 2px 10px rgba(55, 55, 55, .65), 2px -2px 10px rgba(55, 55, 55, .65), 0px -2px 10px rgba(55, 55, 55, .65), 0px 2px 10px rgba(55, 55, 55, .65), -2px 0px 10px rgba(55, 55, 55, .65), 2px 5px 10px rgba(55, 55, 55, .65);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #comments>.comment-frame>.comment img {
