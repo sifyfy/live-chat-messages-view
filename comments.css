@@ -4,8 +4,9 @@ body {
     /* font-family: "FOT-ハミング Std D"; */
     font-family: "FOT-ユールカ Std UB";
     /* font-family: "FOT-ラグランパンチ Std UB"; */
-    font-size: 2rem;
-    color: #ffdcdc;
+    font-size: 1.25rem;
+    /* color: #ffdcdc; */
+    color: #505050;
     /* -webkit-text-stroke: 1px #333333; */
 }
 
@@ -21,7 +22,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: end;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 @keyframes live-chat-message-slidein-comment-frame {
@@ -29,11 +30,11 @@ body {
         max-width: 0;
     }
 
-    1% {
+    5% {
         max-width: 750px;
     }
 
-    98% {
+    95% {
         right: 0;
     }
 
@@ -47,7 +48,7 @@ body {
         left: 100%;
     }
 
-    1% {
+    5% {
         left: 0;
     }
 }
@@ -56,17 +57,36 @@ body {
     margin: 0 calc(1em * 0.6);
     position: relative;
     animation-name: live-chat-message-slidein-comment-frame;
-    animation-duration: 60s;
+    animation-duration: 15s;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
     max-width: 750px;
 }
 
+#comments>.comment-frame::after {
+    content: " ";
+    width: 1rem;
+    height: 1rem;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: calc(-0.5rem - 1px);
+    right: calc(50% - 0.5rem);
+    background-color: #fff;
+    border-right: 2px solid #777;
+    border-bottom: 2px solid #777;
+    border-radius: 0 0 5px 0;
+}
+
 #comments>.comment-frame>.comment {
-    padding: 3px 5px;
-    line-height: 1.5;
+    height: calc(1.25rem + 0.6rem + 0.4rem);
+    padding: 0.8rem 1.6rem 0 1.6rem;
+    background-color: #fff;
+    border: 2px solid #777;
+    border-radius: calc(1.25rem + 0.6rem + 0.4rem);
     /* text-shadow: 2px 2px 10px rgba(255, 255, 255, 1), -2px -2px 10px rgba(255, 255, 255, 1), -2px 2px 10px rgba(255, 255, 255, 1), 2px -2px 10px rgba(255, 255, 255, 1), 0px -2px 10px rgba(255, 255, 255, 1), 0px 2px 10px rgba(255, 255, 255, 1), -2px 0px 10px rgba(255, 255, 255, 1), 2px 0px 10px rgba(255, 255, 255, 1); */
-    text-shadow: 5px 5px 5px rgba(55, 55, 55, 1), -5px -5px 5px rgba(55, 55, 55, 1), -5px 5px 5px rgba(55, 55, 55, 1), 5px -5px 5px rgba(55, 55, 55, 1), 0px -5px 5px rgba(55, 55, 55, 1), 0px 5px 5px rgba(55, 55, 55, 1), -5px 0px 5px rgba(55, 55, 55, 1), 5px 0px 5px rgba(55, 55, 55, 1);
+    /* text-shadow: 5px 5px 5px rgba(55, 55, 55, 1), -5px -5px 5px rgba(55, 55, 55, 1), -5px 5px 5px rgba(55, 55, 55, 1), 5px -5px 5px rgba(55, 55, 55, 1), 0px -5px 5px rgba(55, 55, 55, 1), 0px 5px 5px rgba(55, 55, 55, 1), -5px 0px 5px rgba(55, 55, 55, 1), 5px 0px 5px rgba(55, 55, 55, 1); */
+    /* box-shadow: 5px 5px 5px rgba(55, 55, 55, 1); */
+    line-height: 1.25rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -78,6 +98,6 @@ body {
 
 #comments>.comment-frame>.comment img {
     width: auto;
-    height: 1.5em;
+    height: 1.5rem;
     vertical-align: middle;
 }

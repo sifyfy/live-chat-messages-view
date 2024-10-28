@@ -48,7 +48,7 @@
             } else if (comment.comment == null) {
                 let html_comment = '';
                 for (const stamp of comment.stamp_data_list) {
-                    html_comment += `<img src="file:///${stamp.url}" width="${stamp.width}" height="${stamp.height}">`;
+                    html_comment += `<img src="http://absolute/${stamp.url}" width="${stamp.width}" height="${stamp.height}">`;
                 }
                 newComment.innerHTML = html_comment;
             } else {
@@ -57,7 +57,7 @@
                     newComment.appendChild(text);
 
                     const img = document.createElement("img");
-                    img.setAttribute("src", `file:///${stamp.url}`);
+                    img.setAttribute("src", `http://absolute/${stamp.url}`);
                     img.setAttribute("width", `${stamp.width}`);
                     img.setAttribute("height", `${stamp.height}`);
                     newComment.appendChild(img);
